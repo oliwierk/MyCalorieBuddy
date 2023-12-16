@@ -4,7 +4,7 @@ import MealBox from "../components/MealBox";
 import Footer from "../components/Footer";
 import tw from "twrnc";
 
-export default function Home() {
+export default function HomeSreen() {
 	return (
 		<View style={tw`h-full w-full bg-gray-900 flex flex-col gap-2`}>
 			<Navbar />
