@@ -1,9 +1,13 @@
 import { SafeAreaView, Text, View, TouchableOpacity } from "react-native";
 import { useNavigate } from "react-router-native";
+import { useLocation } from "react-router-native";
+
 import tw from "twrnc";
 
 export default function NavbarFilled() {
 	const navigate = useNavigate();
+	const location = useLocation();
+	const mealName = location.state?.mealName;
 
 	return (
 		<View
@@ -12,7 +16,7 @@ export default function NavbarFilled() {
 			<TouchableOpacity style={tw``} onPress={() => navigate("/")}>
 				<Text style={tw`text-lg text-slate-50`}>Wróć</Text>
 			</TouchableOpacity>
-			<Text style={tw`text-xl font-bold text-slate-50`}>Posiłek I</Text>
+			<Text style={tw`text-xl font-bold text-slate-50`}>{mealName}</Text>
 		</View>
 	);
 }
